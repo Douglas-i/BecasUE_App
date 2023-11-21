@@ -1,0 +1,42 @@
+<!-- pantalla.component.html -->
+<div *ngIf="mostrarPantalla">
+  <div class="container">
+    <!-- Menú izquierdo -->
+    <div class="menu">
+      <h2>Información Personal</h2>
+      <button (click)="cambiarSeccion('informacionGeneral')">Información General</button>
+      <button (click)="cambiarSeccion('empleo')">Empleo</button>
+      <button (click)="cambiarSeccion('Estudios')">Estudios</button>
+      <button (click)="cambiarSeccion('Informacion Programa')">Informacion Programa</button>
+    </div>
+  
+    <!-- Contenido principal -->
+    <div class="contenido">
+      <!-- Sección Información Programa -->
+      <div class="seccion">
+        <h2>Prgramas de BECA UE</h2>
+        <!-- <button (click)="agregarSolicitud('programa1')">Agregar Solicitud</button> -->
+        <!-- Puedes agregar más contenido según tus necesidades -->
+      </div>
+
+      <!-- Lista de Programas Ofertados -->
+      <div class="seccion">
+        <h2>Lista de Programas Ofertados</h2>
+        <ul>
+          <!-- ... (programas anteriores) -->
+          
+          <!-- Agregar más elementos a la lista -->
+          <li *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+            <div class="programa-item">
+              <!-- <span>{{ 'Ejemplo ' + i }}</span> -->
+              <span>{{ obtenerTituloPorIndice(i) }}</span>
+              <button (click)="agregarSolicitud('Ejemplo ' + i)">Agregar Solicitud</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
