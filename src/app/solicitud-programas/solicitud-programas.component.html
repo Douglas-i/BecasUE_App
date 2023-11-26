@@ -1,0 +1,52 @@
+<div class="container">
+    <!-- Solicitud Programas -->
+    <div class="candidato">
+        <section class="header">
+            <h2>Solicitud Programas</h2>
+        </section>
+
+        <form (submit)="guardarCambios()" [formGroup]="form">
+            <mat-form-field appearance="outline">
+                <mat-label>Resumen</mat-label>
+                <input formControlName="resumen" matInput>
+                <mat-error *ngIf="form.invalid">El campo es requerido</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Fecha</mat-label>
+                <input formControlName="fecha" matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="form.invalid">El campo es requerido</mat-error>
+            </mat-form-field>
+
+            <div>
+                <button mat-flat-button color="primary" [disabled]="form.invalid">
+                    Guardar Cambios
+                </button>
+            </div>
+        </form>
+        <!-- <section class="body">
+            <label for="">Resumen</label>
+            <input type="text">
+            <label for="">Fecha</label>
+            <input type="datetime-local">
+            <button style="background-color: rgb(13, 235, 13);" type="button" (click)="guardarCambios()">Guardar</button>
+        </section> -->
+    </div>
+
+    <!-- Programas Ofertados -->
+    <div class="programas">
+        <section class="header">
+            <h2>Infomes de Programas</h2>
+        </section>
+        <section class="body">
+            <h2>Programas Ofertados</h2>
+            <div class="listaProgramas">
+                <p>Programa 1</p>
+                <p>Programa 2</p>
+                <p>Programa 3</p>
+            </div>
+        </section>
+    </div>    
+</div>

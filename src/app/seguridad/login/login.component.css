@@ -1,0 +1,25 @@
+/* login.component.css */
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajusta la altura según sea necesario para centrar verticalmente */
+}
+
+form {
+  width: 300px; /* Ajusta el ancho según sea necesario */
+}
+
+mat-card {
+  max-width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+}
