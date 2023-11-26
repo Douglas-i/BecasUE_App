@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { RegistroComponent } from './seguridad/registro/registro.component';
 import { UniversidadComponent } from './universidad/universidad.component';
 import { LoginComponent } from './seguridad/login/login.component';
 import { PersonaComponent } from './persona/persona.component';
+import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +29,16 @@ import { PersonaComponent } from './persona/persona.component';
     RegistroComponent,
     UniversidadComponent,
     LoginComponent,
-    PersonaComponent
+    PersonaComponent,
+    ListadoGenericoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

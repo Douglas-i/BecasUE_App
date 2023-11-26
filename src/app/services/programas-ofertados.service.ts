@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { ProgramasOfertadosDTO } from '../Interface/programasOfertados';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.development';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProgramasOfertadosService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  public obtenerProgramasOfertados():ProgramasOfertadosDTO[] {
-    return [{Programa: "Prueba de Servicio"}]
+  private apiURL = environment.apiURL;
+
+  public obtenerProgramasOfertados() : Observable<ProgramasOfertadosDTO[]> {
+    return this.http.get<ProgramasOfertadosDTO[]>(this.apiURL);
   }
 }
