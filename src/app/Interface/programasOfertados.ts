@@ -8,3 +8,13 @@ export interface ProgramasOfertadosDTO {
     ofertaAnual: string,
     universidad: string
 }
+
+export interface ProgramasOfertadoCDTO {    
+    fechaInicio: string,
+    fechaFinalazacion: string,
+    montoAprobado: number,
+    financiamiento: number,
+    programasTitualcion: number,
+    ofertaAnual: number,
+    universidad: number
+}
