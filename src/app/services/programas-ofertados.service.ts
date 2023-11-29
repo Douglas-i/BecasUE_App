@@ -11,7 +11,7 @@ export class ProgramasOfertadosService {
 
   constructor(private http: HttpClient) { }
 
-  private apiURL = environment.apiURL;
+  private apiURL = environment.apiURL+'ProgramasOfertados';
 
   public obtenerProgramasOfertados() : Observable<ProgramasOfertadosDTO[]> {
     return this.http.get<ProgramasOfertadosDTO[]>(this.apiURL);

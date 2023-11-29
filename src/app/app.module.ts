@@ -18,6 +18,7 @@ import { UniversidadComponent } from './universidad/universidad.component';
 import { LoginComponent } from './seguridad/login/login.component';
 import { PersonaComponent } from './persona/persona.component';
 import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
+import { AceptarProgramasComponent } from './aceptar-programas/aceptar-programas.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-
     LoginComponent,
     PersonaComponent,
     ListadoGenericoComponent,
+    AceptarProgramasComponent,
   ],
   imports: [
     BrowserModule,

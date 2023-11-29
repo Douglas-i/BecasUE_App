@@ -1,6 +1,6 @@
 <!-- persona.component.html -->
 
-<form [formGroup]="personaForm" class="persona-form">
+<form [formGroup]="personaForm" class="persona-form" (ngSubmit)="onSubmit()">
   <mat-card>
     <mat-card-header>
       <mat-card-title>Información de la Persona</mat-card-title>
