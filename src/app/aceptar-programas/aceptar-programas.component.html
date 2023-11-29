@@ -1,0 +1,39 @@
+<div class="container">     
+    <div class="programas">        
+        <section class="body">
+            <h2>Solicitudes de Programas</h2>
+            <div class="listaProgramas">
+                <!-- programas-ofertados.component.html -->
+                <table style="width: 100%;">
+                    <thead>
+                    <tr>
+                        <th>Numero de Solicitud</th>
+                        <th>Resumen</th>
+                        <th>Fecha de Solicitud</th>
+                        <th>Candidato</th>
+                        <th>Programa</th>  
+                        <th>Estado</th>
+                        <th>Aceptar</th>                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- <ng-container *ngIf="!programaSeleccionado"> -->
+                        <!-- Mostrar todos los programas si no hay uno seleccionado -->
+                        <tr *ngFor="let programa of solicitudesProgramas">
+                        <td>{{ programa.solicitudId }}</td>
+                        <td>{{ programa.resumen }}</td>
+                        <td>{{ programa.fechaSolicitud }}</td>                        
+                        <td>{{ programa.personaId }}</td>
+                        <td>{{ programa.programaOfertadoID }}</td>
+                        <td>{{ programa.estado }}</td>
+                        <td>
+                            <button (click)="aceptarSolicitud(programa)">Aceptar</button>
+                        </td>
+                        </tr>
+                    <!-- </ng-container> -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>    
+</div>

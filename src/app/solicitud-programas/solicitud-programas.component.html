@@ -1,0 +1,123 @@
+<div class="container">
+    <!-- Solicitud Programas -->
+    <div class="candidato">
+        <section class="header">
+            <h2>Solicitud Programas</h2>
+        </section>
+
+        <form (submit)="guardarCambios()" [formGroup]="form">
+            <mat-form-field appearance="outline">
+                <mat-label>Resumen</mat-label>
+                <input formControlName="resumen" matInput>
+                <mat-error *ngIf="form.invalid">El campo es requerido</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Fecha</mat-label>
+                <input formControlName="fecha" matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="form.invalid">El campo es requerido</mat-error>
+            </mat-form-field>
+
+            <div>
+                <button mat-flat-button color="primary" [disabled]="form.invalid">
+                    Guardar Cambios
+                </button>
+            </div>
+        </form>
+        <!-- <section class="body">
+            <label for="">Resumen</label>
+            <input type="text">
+            <label for="">Fecha</label>
+            <input type="datetime-local">
+            <button style="background-color: rgb(13, 235, 13);" type="button" (click)="guardarCambios()">Guardar</button>
+        </section> -->
+    </div>
+
+    <!-- Programas Ofertados -->
+    <div class="programas">
+        <section class="header">
+            <h2>Infomes de Programas</h2>
+        </section>
+        <section class="body">
+            <h2>Programas Ofertados</h2>
+            <div class="listaProgramas">
+                <!-- programas-ofertados.component.html -->
+                <table style="width: 100%;">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Inicio</th>
+                        <th>Fin</th>
+                        <th>Monto</th>
+                        <th>Financiamiento</th>
+                        <th>Titulación</th>
+                        <th>Anual</th>
+                        <th>Universidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <ng-container *ngIf="!programaSeleccionado; else selectedProgram">
+                        <!-- Mostrar todos los programas si no hay uno seleccionado -->
+                        <tr *ngFor="let programa of programasOfertados">
+                        <td>{{ programa.programaOfertadoId }}</td>
+                        <td>{{ programa.fechaInicio }}</td>
+                        <td>{{ programa.fechaFinalazacion }}</td>
+                        <td>{{ programa.montoAprobado }}</td>
+                        <td>{{ programa.financiamiento }}</td>
+                        <td>{{ programa.programasTitualcion }}</td>
+                        <td>{{ programa.ofertaAnual }}</td>
+                        <td>{{ programa.universidad }}</td>
+                        <td>
+                            <button (click)="seleccionarPrograma(programa)">Seleccionar</button>
+                        </td>
+                        </tr>
+                    </ng-container>
+                    <ng-template #selectedProgram>
+                        <!-- Mostrar solo el programa seleccionado -->
+                        <tr>
+                        <td>{{ programaSeleccionado.programaOfertadoId }}</td>
+                        <td>{{ programaSeleccionado.fechaInicio }}</td>
+                        <td>{{ programaSeleccionado.fechaFinalazacion }}</td>
+                        <td>{{ programaSeleccionado.montoAprobado }}</td>
+                        <td>{{ programaSeleccionado.financiamiento }}</td>
+                        <td>{{ programaSeleccionado.programasTitualcion }}</td>
+                        <td>{{ programaSeleccionado.ofertaAnual }}</td>
+                        <td>{{ programaSeleccionado.universidad }}</td>
+                        <td>
+                            <button (click)="reiniciarSeleccion()">Reiniciar Selección</button>
+                        </td>
+                        </tr>
+                    </ng-template>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>    
+</div>
+
+<!-- Listado de programsa ofertados -->
+<!-- <app-listado-generico [listado]="programasOfertados">
+    <ng-container contenido>
+        <table #table mat-table [dataSource]="programasOfertados" class="mat-elevation-z8">
+            <ng-container matColumnDef="programaOfertadoId">
+                <th mat-header-cell *matHeaderCellDef>Programa Id</th>
+                <td mat-cell *matCellDef="let element">{{element.programaOfertadoId}}</td>
+            </ng-container>
+            <ng-container matColumnDef="fechaInicio">
+                <th mat-header-cell *matHeaderCellDef>fechaInicio</th>
+                <td mat-cell *matCellDef="let element">{{element.fechaInicio}}</td>
+            </ng-container>
+            <ng-container matColumnDef="acciones">
+                <th mat-header-cell *matHeaderCellDef>acciones</th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-flat-button color="primary">Seleccionar</button>                                
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnasAMostrar"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnasAMostrar"></tr>
+        </table>
+    </ng-container>
+</app-listado-generico> -->
