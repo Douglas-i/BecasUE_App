@@ -3,6 +3,12 @@
     border-radius: 0.8rem;
     border: solid #002F8C;      
 }
+.body{
+    border: solid #002F8C;
+}
+.programas {
+    display: flex;
+}
 .header {
     background-color: #002F8C;
     color: white;    

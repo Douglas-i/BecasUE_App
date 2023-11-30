@@ -11,6 +11,7 @@ mat-toolbar a {
     text-decoration: none; 
     display: flex;
     justify-content: center;
+    size: 2rem;
 }
 .menu {
     display: flex;

@@ -11,7 +11,7 @@ export interface ProgramasOfertadosDTO {
 
 export interface ProgramasOfertadoCDTO {    
     fechaInicio: string,
-    fechaFinalazacion: string,
+    fechaFinalizacion: string,
     montoAprobado: number,
     financiamiento: number,
     programasTitualcion: number,

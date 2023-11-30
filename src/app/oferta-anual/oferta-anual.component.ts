@@ -30,7 +30,7 @@ export class OfertaAnualComponent {
     if (this.ofertaAnualForm.valid) {
       // Crea instancias de PersonaCDTO y Usuario con los valores del formulario
       const datosOfertaAnual: OfertaAnualCDTO = {
-        año: this.ofertaAnualForm.value.año.number,
+        anio: parseInt(this.ofertaAnualForm.value.año),
         fechaApertura: this.ofertaAnualForm.value.fechaApertura,
         fechaCierre: this.ofertaAnualForm.value.fechaCierre,
         numeroUniversidades: this.ofertaAnualForm.value.numeroUniversidades,
@@ -38,7 +38,7 @@ export class OfertaAnualComponent {
         paisSedePrograma: this.ofertaAnualForm.value.pais,
         estado: this.ofertaAnualForm.value.estado
       };
-      
+      console.log(datosOfertaAnual);
       this.ofertaService.crearOfertaAnual(datosOfertaAnual).subscribe();
     }    
   }

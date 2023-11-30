@@ -8,6 +8,7 @@ import { LoginComponent } from './seguridad/login/login.component';
 import { PersonaComponent } from './persona/persona.component';
 import { AceptarProgramasComponent } from './aceptar-programas/aceptar-programas.component';
 import { OfertaAnualComponent } from './oferta-anual/oferta-anual.component';
+import { ProgramasOfertadosComponent } from './programas-ofertados/programas-ofertados.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'persona', component: PersonaComponent},
   {path: 'aceptarProgramas', component: AceptarProgramasComponent},
-  {path: 'OfertaAnual', component: OfertaAnualComponent}
+  {path: 'OfertaAnual', component: OfertaAnualComponent},
+  {path: 'programaOfertados', component: ProgramasOfertadosComponent}
 ];
 
 @NgModule({
