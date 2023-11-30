@@ -19,6 +19,11 @@ import { LoginComponent } from './seguridad/login/login.component';
 import { PersonaComponent } from './persona/persona.component';
 import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
 import { AceptarProgramasComponent } from './aceptar-programas/aceptar-programas.component';
+import { ProgramasOfertadosComponent } from './programas-ofertados/programas-ofertados.component';
+import { OfertaAnualComponent } from './oferta-anual/oferta-anual.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { EstudiosAcademicosComponent } from './estudios-academicos/estudios-academicos.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,11 @@ import { AceptarProgramasComponent } from './aceptar-programas/aceptar-programas
     PersonaComponent,
     ListadoGenericoComponent,
     AceptarProgramasComponent,
+    ProgramasOfertadosComponent,
+    OfertaAnualComponent,
+    UsuarioComponent,
+    EstudiosAcademicosComponent,
+    MenuAdminComponent,
   ],
   imports: [
     BrowserModule,

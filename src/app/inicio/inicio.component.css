@@ -1,0 +1,47 @@
+.container {
+    margin: 1rem 5rem;    
+    border-radius: 0.8rem;
+    border: solid #002F8C;      
+}
+.body{
+    border: solid #002F8C;
+}
+.header {
+    background-color: #002F8C;
+    color: white;    
+}
+.candidato {
+    margin-bottom: 1rem;
+}
+/* programas-ofertados.component.css */
+.listaProgramas {
+    display: flex;
+    justify-content: center;
+}
+.table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}

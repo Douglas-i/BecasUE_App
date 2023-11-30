@@ -7,15 +7,27 @@ import { UniversidadComponent } from './universidad/universidad.component';
 import { LoginComponent } from './seguridad/login/login.component';
 import { PersonaComponent } from './persona/persona.component';
 import { AceptarProgramasComponent } from './aceptar-programas/aceptar-programas.component';
+import { OfertaAnualComponent } from './oferta-anual/oferta-anual.component';
+import { ProgramasOfertadosComponent } from './programas-ofertados/programas-ofertados.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { EstudiosAcademicosComponent } from './estudios-academicos/estudios-academicos.component';
+import { MenuComponent } from './menu/menu.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: LoginComponent},
+  {path: 'menu', component: MenuComponent},
   {path: 'solicitudProgramas', component: SolicitudProgramasComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'universidad', component: UniversidadComponent},
   {path: 'login', component: LoginComponent},
   {path: 'persona', component: PersonaComponent},
-  {path: 'aceptarProgramas', component: AceptarProgramasComponent}
+  {path: 'aceptarProgramas', component: AceptarProgramasComponent},
+  {path: 'OfertaAnual', component: OfertaAnualComponent},
+  {path: 'programaOfertados', component: ProgramasOfertadosComponent},
+  {path: 'usuario', component:UsuarioComponent},
+  {path: 'estudiosAcademicos', component: EstudiosAcademicosComponent},
+  {path: 'menuAdmin', component: MenuAdminComponent}
 ];
 
 @NgModule({

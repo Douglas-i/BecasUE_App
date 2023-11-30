@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   /* height: 100vh; */
+  margin-top: 2rem;
 }
 
 mat-card {
@@ -27,8 +28,8 @@ mat-card-actions {
   display: flex;
   justify-content: center;
 }
-
+/* 
 .container {
   display: flex;
-}
+} */
 /* Ajusta otros estilos según sea necesario */

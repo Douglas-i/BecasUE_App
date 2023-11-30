@@ -17,11 +17,11 @@ export interface PersonaDTO {
     usuarioID: 0 //Se tiene quitar del controller
 }
 
-export interface Usuario {
+export interface UsuarioCDTO {
     nombreUsuario: string,
     contraseña: string,
     fechaCreación: string,
     ultimaModificación: string,
     rolID: 0,
-    personaId: 0
+    personaId: number
 }

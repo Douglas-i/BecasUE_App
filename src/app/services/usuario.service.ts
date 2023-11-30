@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
-import { PersonaCDTO, PersonaDTO, Usuario } from '../Interface/Persona';
+import { PersonaCDTO, PersonaDTO, UsuarioCDTO } from '../Interface/Persona';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -21,6 +21,7 @@ export class UsuarioService {
       })
     };
 
+    console.log("Creando la persona")
     return this.http.post(apiURL, form, httpOptions);
   }
 
@@ -31,7 +32,7 @@ export class UsuarioService {
   }
 
   //Crear Usuario
-  public crearUsuario(form: Usuario) {
+  public crearUsuario(form: UsuarioCDTO) {
     const apiURL = environment.apiURL + 'Usuario';
     return this.http.post(apiURL, form);
   }

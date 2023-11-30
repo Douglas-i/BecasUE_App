@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <!-- persona.component.html -->
 
 <form [formGroup]="personaForm" class="persona-form" (ngSubmit)="onSubmit()">
@@ -6,8 +7,7 @@
       <mat-card-title>Información de la Persona</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <div class="container">
-        <div class="form-column">
+      <div class="container">        
           <mat-form-field appearance="outline">
             <mat-label>Nombres*</mat-label>
             <input matInput formControlName="nombres" required>
@@ -31,20 +31,7 @@
           <mat-form-field appearance="outline">
             <mat-label>Correo*</mat-label>
             <input matInput formControlName="correo">
-          </mat-form-field>
-        </div>
-  
-        <div class="form-column">  
-          <mat-form-field appearance="outline">
-            <mat-label>Usuario*</mat-label>
-            <input matInput formControlName="usuario" required>
-          </mat-form-field>
-  
-          <mat-form-field appearance="outline">
-            <mat-label>Contraseña*</mat-label>
-            <input matInput type="password" formControlName="contrasena" required>
-          </mat-form-field>
-        </div>
+          </mat-form-field>        
       </div>      
     </mat-card-content>
     <mat-card-actions>

@@ -1,5 +1,9 @@
 export interface SolicitudProgramaCDTO {
-    resumen: string;
+    resumen: string,
+    fechaSolicitud: string,
+    estado: string,
+    personaId: number,
+    programaOfertadoId: number
 }
 
 export interface SolicitudProgramaDTO {
@@ -7,6 +11,6 @@ export interface SolicitudProgramaDTO {
     resumen: string,
     fechaSolicitud: string,
     estado: string,
-    persona: number,
+    personaId: number,
     programaOfertadoId: number
 }

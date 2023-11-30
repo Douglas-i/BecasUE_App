@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { SolicitudProgramaCDTO } from '../Interface/solicitudPrograma';
 import { ProgramasOfertadosService } from '../services/programas-ofertados.service';
 import { ProgramasOfertadosDTO } from '../Interface/programasOfertados';
+import { SolicitudProgramasService } from '../services/solicitud-programas.service';
 
 @Component({
   selector: 'app-solicitud-programas',
@@ -12,7 +13,7 @@ import { ProgramasOfertadosDTO } from '../Interface/programasOfertados';
 })
 export class SolicitudProgramasComponent implements OnInit{
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private programasOfertadosService: ProgramasOfertadosService){}
+  constructor(private router: Router, private formBuilder: FormBuilder, private programasOfertadosService: ProgramasOfertadosService, private solicitudProgramaService: SolicitudProgramasService){}
 
   form: FormGroup;
   programasOfertados: ProgramasOfertadosDTO[];
@@ -43,7 +44,19 @@ export class SolicitudProgramasComponent implements OnInit{
   }
   
   guardarCambios() {
-    console.log(this.form.value)
+    const datosSolicitud: SolicitudProgramaCDTO = {
+      resumen: this.form.value.resumen,
+      fechaSolicitud: new Date().toISOString(),//this.form.value.fecha,
+      estado: "En revision",
+      personaId: 1,
+      programaOfertadoId: this.programaSeleccionado.programaOfertadoId
+    }
+
+    console.log(datosSolicitud);
+
+    this.solicitudProgramaService.crerPrograma(datosSolicitud).subscribe(data => {
+      console.log(data);
+    });
     this.router.navigate(['/inicio'])    
   }
 }

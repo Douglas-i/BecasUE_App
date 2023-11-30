@@ -1,6 +1,8 @@
+<app-menu></app-menu>
+
 <!-- universidad.component.html -->
 
-<form [formGroup]="universidadForm" class="universidad-form">
+<form [formGroup]="universidadForm" class="universidad-form" (ngSubmit)="onSubmit()">
     <mat-card>
       <mat-card-header>
         <mat-card-title>Información de la Universidad</mat-card-title>

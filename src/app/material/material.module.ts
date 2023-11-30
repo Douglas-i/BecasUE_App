@@ -8,6 +8,7 @@ import {MatInputModule} from '@angular/material/input'
 import {MatDatepickerModule} from '@angular/material/datepicker'
 import {MatNativeDateModule} from '@angular/material/core'
 import {MatTableModule} from '@angular/material/table'
+import {MatSelectModule} from '@angular/material/select'
 // otros
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -22,6 +23,7 @@ import { MatCardModule } from '@angular/material/card';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTableModule,
+    MatSelectModule,
     
     // otros
     ReactiveFormsModule,
