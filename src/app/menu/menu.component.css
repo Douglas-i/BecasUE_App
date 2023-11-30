@@ -12,6 +12,7 @@ mat-toolbar a {
     display: flex;
     justify-content: center;
     size: 2rem;
+    color: white;
 }
 .menu {
     display: flex;

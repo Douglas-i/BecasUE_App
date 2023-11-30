@@ -21,6 +21,8 @@ import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-
 import { AceptarProgramasComponent } from './aceptar-programas/aceptar-programas.component';
 import { ProgramasOfertadosComponent } from './programas-ofertados/programas-ofertados.component';
 import { OfertaAnualComponent } from './oferta-anual/oferta-anual.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { EstudiosAcademicosComponent } from './estudios-academicos/estudios-academicos.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { OfertaAnualComponent } from './oferta-anual/oferta-anual.component';
     AceptarProgramasComponent,
     ProgramasOfertadosComponent,
     OfertaAnualComponent,
+    UsuarioComponent,
+    EstudiosAcademicosComponent,
   ],
   imports: [
     BrowserModule,

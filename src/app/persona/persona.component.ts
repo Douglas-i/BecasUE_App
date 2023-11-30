@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PersonaCDTO, PersonaDTO, Usuario } from '../Interface/Persona';
+import { PersonaCDTO, PersonaDTO,} from '../Interface/Persona';
 import { UsuarioService } from '../services/usuario.service';
 import { last } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-persona',
@@ -12,9 +13,9 @@ import { last } from 'rxjs';
 export class PersonaComponent {
 
   personaForm: FormGroup;
-  persona: PersonaDTO;
+  persona: PersonaDTO;  
 
-  constructor(private fb: FormBuilder, private usuarioService: UsuarioService) {}
+  constructor(private fb: FormBuilder, private usuarioService: UsuarioService, private router: Router,) {}
 
   ngOnInit() {
     this.personaForm = this.fb.group({
@@ -23,8 +24,6 @@ export class PersonaComponent {
       numeroPasaporte: ['', Validators.required],
       pais: ['', Validators.required],
       correo: ['', [Validators.required, Validators.email]],
-      usuario: ['', Validators.required],
-      contrasena: ['', Validators.required]
     });
   }
 
@@ -37,8 +36,6 @@ export class PersonaComponent {
       numeroPasaporte: ['', Validators.required],
       pais: ['', Validators.required],
       correo: [''],
-      usuario: ['', Validators.required],
-      contrasena: ['', Validators.required],
     });
   }
 
@@ -54,16 +51,10 @@ export class PersonaComponent {
         usuarioID: 0, // Es posible que necesites establecer un ID válido aquí
       };
 
-      this.usuarioService.crearPersona(datosPersona);
+      this.usuarioService.crearPersona(datosPersona).subscribe(data => {
+        console.log(data);
+      });
 
-      const datosUsuario: Usuario = {
-        nombreUsuario: this.personaForm.value.usuario,
-        contraseña: this.personaForm.value.contrasena,
-        fechaCreación: new Date().toISOString(),
-        ultimaModificación: new Date().toISOString(),
-        rolID: 0, // Es posible que necesites establecer un ID válido aquí
-        personaId: 0, // Es posible que necesites establecer un ID válido aquí
-      };
       
       this.usuarioService.obtenerPersona().subscribe(persona => {
         console.log(persona);
@@ -71,6 +62,8 @@ export class PersonaComponent {
         console.log("Persona Encontrada: "+this.persona);
         //filtro
       });
+
+      this.router.navigate(['/usuario']); 
 
       // Realiza la acción para guardar los datos, por ejemplo, llama a un método de servicio
       // this.tuServicio.guardarDatos(datosPersona, datosUsuario);
