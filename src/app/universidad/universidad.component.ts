@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UniversidadService } from '../services/universidad.service';
 import { UniversidadCDTO } from '../Interface/Universidad';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-universidad',
@@ -12,7 +13,7 @@ export class UniversidadComponent{
 
   universidadForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private universidadService: UniversidadService) {}
+  constructor(private fb: FormBuilder, private universidadService: UniversidadService, private router: Router) {}
 
   ngOnInit() {
     this.universidadForm = this.fb.group({
@@ -36,6 +37,8 @@ export class UniversidadComponent{
       };
       
       this.universidadService.crearUniversidad(datosUniversidad).subscribe();     
+
+      this.router.navigate(['/aceptarProgramas']);
     }    
   }
 }

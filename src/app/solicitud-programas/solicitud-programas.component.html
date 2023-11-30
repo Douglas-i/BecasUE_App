@@ -1,3 +1,5 @@
+<app-menu-admin></app-menu-admin>
+
 <div class="container">
     <!-- Solicitud Programas -->
     <div class="candidato">
@@ -6,7 +8,7 @@
         </section>
 
         <form (submit)="guardarCambios()" [formGroup]="form">
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" style="margin-right: 1rem;">
                 <mat-label>Resumen</mat-label>
                 <input formControlName="resumen" matInput>
                 <mat-error *ngIf="form.invalid">El campo es requerido</mat-error>

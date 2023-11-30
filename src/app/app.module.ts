@@ -23,6 +23,7 @@ import { ProgramasOfertadosComponent } from './programas-ofertados/programas-ofe
 import { OfertaAnualComponent } from './oferta-anual/oferta-anual.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { EstudiosAcademicosComponent } from './estudios-academicos/estudios-academicos.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { EstudiosAcademicosComponent } from './estudios-academicos/estudios-acad
     OfertaAnualComponent,
     UsuarioComponent,
     EstudiosAcademicosComponent,
+    MenuAdminComponent,
   ],
   imports: [
     BrowserModule,

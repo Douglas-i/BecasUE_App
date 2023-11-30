@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UniversidadService } from '../services/universidad.service';
 import { OfertaAnualService } from '../services/oferta-anual.service';
 import { OfertaAnualCDTO } from '../Interface/OfertaAnual';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-oferta-anual',
@@ -13,7 +14,7 @@ export class OfertaAnualComponent {
 
   ofertaAnualForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private ofertaService: OfertaAnualService) {}
+  constructor(private fb: FormBuilder, private ofertaService: OfertaAnualService, private router: Router) {}
 
   ngOnInit() {
     this.ofertaAnualForm = this.fb.group({
@@ -40,6 +41,8 @@ export class OfertaAnualComponent {
       };
       console.log(datosOfertaAnual);
       this.ofertaService.crearOfertaAnual(datosOfertaAnual).subscribe();
+
+      this.router.navigate(['/aceptarProgramas']);
     }    
   }
 }

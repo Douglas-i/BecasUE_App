@@ -1,0 +1,26 @@
+<mat-toolbar >
+    <a routerLink="" mat-button>
+        <img
+        width="40"
+        alt="Angular Logo"
+        src="../assets/img/union-europea.png"/>
+        <!-- <span class="span_title">
+            Becas UE
+        </span> -->
+    </a>
+
+    <div class="menu">
+        <a (click)="inicio()">
+            Inicio
+        </a>
+        <a routerLink="solicitudProgramas" (click)="solicitarPrograma()">
+            Solicitar Programas
+        </a>
+        <a routerLink="estudiosAcademicos" (click)="estudiosAcademicos()">
+            Estudios
+        </a>
+        <!-- <a routerLink="">
+            Configuracion
+        </a> -->
+    </div>    
+</mat-toolbar>

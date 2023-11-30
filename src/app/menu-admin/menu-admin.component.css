@@ -1,0 +1,21 @@
+mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #FDAF07;
+    display: flex;
+    justify-content: space-between;
+}
+mat-toolbar a {
+    text-decoration: none; 
+    display: flex;
+    justify-content: center;
+    size: 2rem;
+    color: white;
+}
+.menu {
+    display: flex;
+    gap: 2rem;
+    /* justify-content: flex-start; */
+}

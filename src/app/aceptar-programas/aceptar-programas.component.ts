@@ -31,6 +31,8 @@ export class AceptarProgramasComponent {
         console.log(data);
       }
     );
+
+    this.router.navigate(['/aceptarProgramas']);
   }
   
 }

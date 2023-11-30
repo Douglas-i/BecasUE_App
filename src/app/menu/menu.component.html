@@ -4,38 +4,29 @@
         width="40"
         alt="Angular Logo"
         src="../assets/img/union-europea.png"/>
-        <span class="span_title">
+        <!-- <span class="span_title">
             Becas UE
-        </span>
+        </span> -->
     </a>
 
     <div class="menu">
-        <a routerLink="login">
-            login
-        </a>
-        <a routerLink="OfertaAnual">
+        <a routerLink="OfertaAnual" (click)="ofertaAnual()">
             OfertaAnual
         </a>
-        <a routerLink="universidad">
+        <a routerLink="universidad" (click)="universidad()">
             universidad
         </a>
-        <a routerLink="programaOfertados">
+        <a routerLink="programaOfertados" (click)="programasOfertados()">
             Programas Ofertados
         </a>
-        <a routerLink="solicitudProgramas">
-            Solicitar Programas
-        </a>
-        <a routerLink="aceptarProgramas">
+        <a routerLink="aceptarProgramas" (click)="solicitudesProgramas()">
             Solicitudes Programas
         </a>
-        <a routerLink="persona">
+        <a routerLink="persona" (click)="registrar()">
             Persona
         </a>
-        <a routerLink="estudiosAcademicos">
-            Estudios
-        </a>
-        <a routerLink="">
+        <!-- <a routerLink="">
             Configuracion
-        </a>
+        </a> -->
     </div>    
 </mat-toolbar>

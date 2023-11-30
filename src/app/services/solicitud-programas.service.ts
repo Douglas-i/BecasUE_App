@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
-import { SolicitudProgramaDTO } from '../Interface/solicitudPrograma';
+import { SolicitudProgramaCDTO, SolicitudProgramaDTO } from '../Interface/solicitudPrograma';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -14,6 +14,12 @@ export class SolicitudProgramasService {
   public obtenerSolicitudesProgramas() : Observable<SolicitudProgramaDTO[]> {
     const apiURL = environment.apiURL + 'SolicitudesProgramas';
     return this.http.get<SolicitudProgramaDTO[]>(apiURL);
+  }
+
+  //Crear Programa
+  public crerPrograma(form: SolicitudProgramaCDTO) {
+    const apiURL = environment.apiURL + 'SolicitudesProgramas';
+    return this.http.post(apiURL, form);
   }
 
   public aceptarSolicitudPrograma(IdSolicitud: number, fecha: string) {

@@ -1,6 +1,6 @@
 <!-- login.component.html -->
 
-<form [formGroup]="loginForm">  
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">  
     <mat-card>
       <mat-card-header>
         <mat-card-title>Login</mat-card-title>

@@ -4,6 +4,7 @@ import { ProgramasOfertadosService } from '../services/programas-ofertados.servi
 import { ProgramasOfertadoCDTO, ProgramasOfertadosDTO } from '../Interface/programasOfertados';
 import { UniversidadService } from '../services/universidad.service';
 import { OfertaAnualService } from '../services/oferta-anual.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-programas-ofertados',
@@ -17,7 +18,7 @@ export class ProgramasOfertadosComponent {
   ofertaList: any[] = [];
   programaList: any[] = [];
 
-  constructor(private fb: FormBuilder, private programaOferadoService: ProgramasOfertadosService, private universiadades: UniversidadService, private ofertaService: OfertaAnualService) {}
+  constructor(private fb: FormBuilder, private programaOferadoService: ProgramasOfertadosService, private universiadades: UniversidadService, private ofertaService: OfertaAnualService, private router: Router) {}
 
   ngOnInit() {
     this.programasOfertadosForm = this.fb.group({
@@ -46,20 +47,21 @@ export class ProgramasOfertadosComponent {
   }
   
   onSubmit() {
-    if (this.programasOfertadosForm.valid) {
+    // if (this.programasOfertadosForm.valid) {
       // Crea instancias de PersonaCDTO y Usuario con los valores del formulario
       const datosProgramasOfertado: ProgramasOfertadoCDTO = {
         fechaInicio: this.programasOfertadosForm.value.fechaInicio,
         fechaFinalizacion: this.programasOfertadosForm.value.fechaFinalizacion,
         montoAprobado: parseInt(this.programasOfertadosForm.value.montoAprobado),
-        financiamiento: parseInt(this.programasOfertadosForm.value.financiamiento),
+        financiamiento: 1,//parseInt(this.programasOfertadosForm.value.financiamiento),
         programasTitualcion: parseInt(this.programasOfertadosForm.value.programa),
         ofertaAnual: parseInt(this.programasOfertadosForm.value.ofertaId),
         universidad: parseInt(this.programasOfertadosForm.value.universidad)
-
       };
       console.log(datosProgramasOfertado)
       this.programaOferadoService.crearProgramaOfertado(datosProgramasOfertado).subscribe();     
-    }    
+    // }    
+
+    this.router.navigate(['/menu'])
   }
 }
