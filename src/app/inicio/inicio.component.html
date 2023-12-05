@@ -8,7 +8,7 @@
                 <table style="width: 100%;">
                     <thead>
                     <tr>
-                        <th>Numero de Solicitud</th>
+                        <th>Número de Solicitud</th>
                         <th>Resumen</th>
                         <th>Fecha de Solicitud</th>
                         <th>Candidato</th>
@@ -40,7 +40,7 @@
                 <table style="width: 100%;">
                     <thead>
                     <tr>
-                        <th>Numero de Solicitud</th>
+                        <th>Número de Solicitud</th>
                         <th>Resumen</th>
                         <th>Fecha de Solicitud</th>
                         <th>Candidato</th>
@@ -66,13 +66,13 @@
         </section>
 
         <section class="body">
-            <h2>Tus Estudios</h2>
+            <h2>Estudios Academicos</h2>
             <div class="listaProgramas">
                 <!-- programas-ofertados.component.html -->
                 <table style="width: 100%;">
                     <thead>
                     <tr>
-                        <th>Titulo Obtenido</th>
+                        <th>Título Obtenido</th>
                         <th>Entidad Emisora</th>
                         <th>Fecha de Inicio</th>
                         <th>Fecha de Finalización</th>                                    
@@ -84,6 +84,34 @@
                         <tr *ngFor="let programa of estudiosAcademicos">
                         <td>{{ programa.tituloObtenido }}</td>
                         <td>{{ programa.entidadEmisora }}</td>
+                        <td>{{ programa.fechaInicio }}</td>                        
+                        <td>{{ programa.fechaFinalizacion }}</td>
+                        </tr>
+                    <!-- </ng-container> -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="body">
+            <h2>Experiancia Laboral</h2>
+            <div class="listaProgramas">
+                <!-- programas-ofertados.component.html -->
+                <table style="width: 100%;">
+                    <thead>
+                    <tr>
+                        <th>Título Obtenido</th>
+                        <th>Entidad Emisora</th>
+                        <th>Fecha de Inicio</th>
+                        <th>Fecha de Finalización</th>                                    
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- <ng-container *ngIf="!programaSeleccionado"> -->
+                        <!-- Mostrar todos los programas si no hay uno seleccionado -->
+                        <tr *ngFor="let programa of experiencialLaboral">
+                        <td>{{ programa.puesto }}</td>
+                        <td>{{ programa.entidadTrabajo }}</td>
                         <td>{{ programa.fechaInicio }}</td>                        
                         <td>{{ programa.fechaFinalizacion }}</td>
                         </tr>

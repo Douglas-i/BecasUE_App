@@ -21,4 +21,8 @@ export class MenuAdminComponent {
   inicio() {
     this.router.navigate(['/inicio'])
   }
+
+  experienciaLaboral(){
+    this.router.navigate(['/experienciaLaboral']);
+  }
 }

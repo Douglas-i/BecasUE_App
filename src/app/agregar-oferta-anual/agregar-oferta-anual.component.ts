@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OfertaAnualService } from '../services/oferta-anual.service';
 import { Router } from '@angular/router';
 import { OfertaAnualCDTO } from '../Interface/OfertaAnual';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-agregar-oferta-anual',
@@ -42,7 +43,17 @@ export class AgregarOfertaAnualComponent {
       console.log(datosOfertaAnual);
       this.ofertaService.crearOfertaAnual(datosOfertaAnual).subscribe();
 
-      this.router.navigate(['/OfertaAnual']);
+      Swal.fire({
+        icon: 'success',
+        title: 'Guardado exitosamente',
+        showConfirmButton: false,
+        timer: 1500
+      }).then(() => {
+        // Redirige a la página de dashboard después de la alerta
+        this.router.navigate(['/OfertaAnual']);
+      });
+
+      // this.router.navigate(['/OfertaAnual']);
     }    
   }
 }

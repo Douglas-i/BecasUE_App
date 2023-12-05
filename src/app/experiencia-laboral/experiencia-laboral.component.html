@@ -1,0 +1,42 @@
+<!-- universidad.component.html -->
+<app-menu-admin></app-menu-admin>
+<form [formGroup]="experienciaForm" class="universidad-form" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Experiencia Labooral</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field appearance="outline">
+          <mat-label>Puesto*</mat-label>
+          <input matInput formControlName="puesto" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Entidad de Trabajo*</mat-label>
+          <input matInput formControlName="entidadTrabajo" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha de Inicio</mat-label>
+          <input formControlName="fechaInicio" matInput [matDatepicker]="pickerApertura">
+          <mat-datepicker-toggle matSuffix [for]="pickerApertura"></mat-datepicker-toggle>
+          <mat-datepicker #pickerApertura></mat-datepicker>
+          <mat-error *ngIf="experienciaForm.get('fechaInicio').invalid">El campo es requerido</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha de Finalizacion</mat-label>
+          <input formControlName="fechaFinalizacion" matInput [matDatepicker]="pickerCierre">
+          <mat-datepicker-toggle matSuffix [for]="pickerCierre"></mat-datepicker-toggle>
+          <mat-datepicker #pickerCierre></mat-datepicker>
+          <mat-error *ngIf="experienciaForm.get('fechaFinalizacion').invalid">El campo es requerido</mat-error>
+        </mat-form-field>
+  
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="experienciaForm.invalid">Guardar</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  
+

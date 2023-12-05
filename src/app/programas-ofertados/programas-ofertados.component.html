@@ -4,7 +4,7 @@
 <form [formGroup]="programasOfertadosForm" class="universidad-form" (ngSubmit)="onSubmit()">
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Información de la Universidad</mat-card-title>
+        <mat-card-title>Información del Programa</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <mat-form-field appearance="outline">
@@ -48,7 +48,7 @@
         </mat-form-field>        
 
         <mat-form-field appearance="outline">
-          <mat-label>programa*</mat-label>
+          <mat-label>Programa*</mat-label>
           <mat-select formControlName="programa" required>
                 <!-- Opción 1 -->
                 <mat-option value="1">Doctorado en Medicina</mat-option>

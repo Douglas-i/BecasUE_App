@@ -6,6 +6,7 @@ import { SolicitudProgramasService } from '../services/solicitud-programas.servi
 import { ModalProgramaComponent } from '../modal-programa/modal-programa.component';
 import { MatDialog } from '@angular/material/dialog';
 import { UserService } from '../user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-aceptar-programas',
@@ -82,10 +83,19 @@ export class AceptarProgramasComponent {
       console.log(data);
     })
 
-    // Recargar la página después de completar la solicitud
-    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+     Swal.fire({
+      icon: 'success',
+      title: 'Guardado exitosamente',
+      showConfirmButton: false,
+      timer: 1500
+    }).then(() => {
+      // Redirige a la página de dashboard después de la alerta
       this.router.navigate(['/aceptarProgramas']);
     });
+    // // Recargar la página después de completar la solicitud
+    // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+    //   this.router.navigate(['/aceptarProgramas']);
+    // });
   }
 
 

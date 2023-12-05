@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { SolicitudProgramaDTO, SolicitudProgramaDTOv2 } from '../Interface/solicitudPrograma';
 import { Router } from '@angular/router';
 import { SolicitudProgramasService } from '../services/solicitud-programas.service';
-import { EstudiosAcademicosDTO } from '../Interface/estudiosAcademicos';
+import { EstudiosAcademicosDTO, ExperienciaLaboralDTO } from '../Interface/estudiosAcademicos';
 import { EstudiosService } from '../services/estudios.service';
 import { UserService } from '../user.service';
 
@@ -19,6 +19,7 @@ export class InicioComponent {
   solicitudes: SolicitudProgramaDTOv2[] = [];
   solicitudesAceptadas: SolicitudProgramaDTO[];
   estudiosAcademicos: EstudiosAcademicosDTO[];
+  experiencialLaboral: ExperienciaLaboralDTO[];
 
   constructor(private router: Router, private formBuilder: FormBuilder, private solicitudPorgramaService: SolicitudProgramasService, private estudiosService: EstudiosService, private userService: UserService){}
 
@@ -63,8 +64,14 @@ export class InicioComponent {
       this.solicitudesAceptadas = solicitudes.filter(x => x.estado == "Aceptado");
     });
 
+    //Obtener Estudios
     this.estudiosService.obtenerEstudios().subscribe(data => {
       this.estudiosAcademicos = data;
+    })
+
+    this.estudiosService.obtenerExperiencia().subscribe(data => {
+      this.experiencialLaboral = data;
+      console.log(this.experiencialLaboral);
     })
     
   }

@@ -30,6 +30,7 @@ import { AgregarOfertaAnualComponent } from './agregar-oferta-anual/agregar-ofer
 import { ProgramasOfertadosListaComponent } from './programas-ofertados-lista/programas-ofertados-lista.component';
 import { UsuariosListaComponent } from './usuarios-lista/usuarios-lista.component';
 import { DetallesProgramaComponent } from './detalles-programa/detalles-programa.component';
+import { ExperienciaLaboralComponent } from './experiencia-laboral/experiencia-laboral.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { DetallesProgramaComponent } from './detalles-programa/detalles-programa
     ProgramasOfertadosListaComponent,
     UsuariosListaComponent,
     DetallesProgramaComponent,
+    ExperienciaLaboralComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,8 @@ import { DetallesProgramaComponent } from './detalles-programa/detalles-programa
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
