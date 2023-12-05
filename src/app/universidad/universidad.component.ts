@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UniversidadService } from '../services/universidad.service';
-import { UniversidadCDTO } from '../Interface/Universidad';
+import { UniversidadCDTO, UniversidadDTO } from '../Interface/Universidad';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class UniversidadComponent{
 
   universidadForm: FormGroup;
+  universidadesList: any[] = [];
 
   constructor(private fb: FormBuilder, private universidadService: UniversidadService, private router: Router) {}
 
@@ -23,22 +24,15 @@ export class UniversidadComponent{
       pais: ['', Validators.required],
       telefono: ['', Validators.required]
     });
+
+    //Obtener la universidades
+    this.universidadService.obtenerUniversidad().subscribe( data => {
+      this.universidadesList = data;    
+      console.log(this.universidadesList);
+    });
   }
   
-  onSubmit() {
-    if (this.universidadForm.valid) {
-      // Crea instancias de PersonaCDTO y Usuario con los valores del formulario
-      const datosUniversidad: UniversidadCDTO = {
-        universidadNombre: this.universidadForm.value.nombreUniversidad,
-        pais: this.universidadForm.value.pais,
-        ciudad: this.universidadForm.value.ciudad,
-        direccion: this.universidadForm.value.direccion,
-        telefono: this.universidadForm.value.telefono
-      };
-      
-      this.universidadService.crearUniversidad(datosUniversidad).subscribe();     
-
-      this.router.navigate(['/aceptarProgramas']);
-    }    
+  agregarUniversidad() {
+    this.router.navigate(['/agregarUniversidad']);
   }
 }

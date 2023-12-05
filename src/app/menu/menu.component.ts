@@ -19,7 +19,7 @@ export class MenuComponent {
   }
 
   programasOfertados(){
-    this.router.navigate(['/programaOfertados'])
+    this.router.navigate(['/programasList'])
   }
 
   solicitudesProgramas() {
@@ -27,6 +27,6 @@ export class MenuComponent {
   }
 
   registrar() {
-    this.router.navigate(['/persona'])
+    this.router.navigate(['/candidatos'])
   }
 }

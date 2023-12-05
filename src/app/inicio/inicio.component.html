@@ -2,7 +2,7 @@
 <div class="container">     
     <div class="programas">        
         <section class="body">
-            <h2>Tus Solicitudes</h2>
+            <h2>Solicitudes de Programas</h2>
             <div class="listaProgramas">
                 <!-- programas-ofertados.component.html -->
                 <table style="width: 100%;">
@@ -13,19 +13,79 @@
                         <th>Fecha de Solicitud</th>
                         <th>Candidato</th>
                         <th>Programa</th>  
-                        <th>Estado</th>                     
+                        <th>Estado</th>                                            
                     </tr>
                     </thead>
                     <tbody>
                     <!-- <ng-container *ngIf="!programaSeleccionado"> -->
                         <!-- Mostrar todos los programas si no hay uno seleccionado -->
-                        <tr *ngFor="let programa of solicitudesProgramas">
+                        <tr *ngFor="let programa of solicitudes">
                         <td>{{ programa.solicitudId }}</td>
                         <td>{{ programa.resumen }}</td>
                         <td>{{ programa.fechaSolicitud }}</td>                        
                         <td>{{ programa.personaId }}</td>
-                        <td>{{ programa.programaOfertadoID }}</td>
+                        <td>{{ programa.programaOfertadoId }}</td>
                         <td>{{ programa.estado }}</td>
+                        </tr>
+                    <!-- </ng-container> -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="body">
+            <h2>Solicitudes Aceptadas</h2>
+            <div class="listaProgramas">
+                <!-- programas-ofertados.component.html -->
+                <table style="width: 100%;">
+                    <thead>
+                    <tr>
+                        <th>Numero de Solicitud</th>
+                        <th>Resumen</th>
+                        <th>Fecha de Solicitud</th>
+                        <th>Candidato</th>
+                        <th>Programa</th>  
+                        <th>Estado</th>                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- <ng-container *ngIf="!programaSeleccionado"> -->
+                        <!-- Mostrar todos los programas si no hay uno seleccionado -->
+                        <tr *ngFor="let programa of solicitudesAceptadas">
+                        <td>{{ programa.solicitudId }}</td>
+                        <td>{{ programa.resumen }}</td>
+                        <td>{{ programa.fechaSolicitud }}</td>                        
+                        <td>{{ programa.personaId }}</td>
+                        <td>{{ programa.programaOfertadoId }}</td>
+                        <td>{{ programa.estado }}</td>
+                        </tr>
+                    <!-- </ng-container> -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="body">
+            <h2>Tus Estudios</h2>
+            <div class="listaProgramas">
+                <!-- programas-ofertados.component.html -->
+                <table style="width: 100%;">
+                    <thead>
+                    <tr>
+                        <th>Titulo Obtenido</th>
+                        <th>Entidad Emisora</th>
+                        <th>Fecha de Inicio</th>
+                        <th>Fecha de Finalización</th>                                    
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- <ng-container *ngIf="!programaSeleccionado"> -->
+                        <!-- Mostrar todos los programas si no hay uno seleccionado -->
+                        <tr *ngFor="let programa of estudiosAcademicos">
+                        <td>{{ programa.tituloObtenido }}</td>
+                        <td>{{ programa.entidadEmisora }}</td>
+                        <td>{{ programa.fechaInicio }}</td>                        
+                        <td>{{ programa.fechaFinalizacion }}</td>
                         </tr>
                     <!-- </ng-container> -->
                     </tbody>

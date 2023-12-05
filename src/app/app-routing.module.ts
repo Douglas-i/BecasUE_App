@@ -13,6 +13,10 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { EstudiosAcademicosComponent } from './estudios-academicos/estudios-academicos.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { AgregarUniversidadComponent } from './agregar-universidad/agregar-universidad.component';
+import { AgregarOfertaAnualComponent } from './agregar-oferta-anual/agregar-oferta-anual.component';
+import { ProgramasOfertadosListaComponent } from './programas-ofertados-lista/programas-ofertados-lista.component';
+import { UsuariosListaComponent } from './usuarios-lista/usuarios-lista.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -27,7 +31,11 @@ const routes: Routes = [
   {path: 'programaOfertados', component: ProgramasOfertadosComponent},
   {path: 'usuario', component:UsuarioComponent},
   {path: 'estudiosAcademicos', component: EstudiosAcademicosComponent},
-  {path: 'menuAdmin', component: MenuAdminComponent}
+  {path: 'menuAdmin', component: MenuAdminComponent},
+  {path: 'agregarUniversidad', component: AgregarUniversidadComponent},
+  {path: 'agregarOferta', component: AgregarOfertaAnualComponent},
+  {path: 'programasList', component: ProgramasOfertadosListaComponent},
+  {path: 'candidatos', component: UsuariosListaComponent}
 ];
 
 @NgModule({

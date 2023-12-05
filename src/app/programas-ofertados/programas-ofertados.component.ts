@@ -33,14 +33,12 @@ export class ProgramasOfertadosComponent {
 
     //Obtener la universidades
     this.universiadades.obtenerUniversidad().subscribe( data => {
-      this.universidadesList = data;
-      console.log(this.universidadesList);
+      this.universidadesList = data;      
     });
 
     //obtener las Ofertas
     this.ofertaService.obtenerOferta().subscribe(data => {
-      this.ofertaList = data;
-      console.log(this.ofertaList);
+      this.ofertaList = data;      
     })
 
     //obtener los programas

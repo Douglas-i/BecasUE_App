@@ -15,8 +15,9 @@
           <input matInput type="password" formControlName="password" required>
         </mat-form-field>
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Iniciar sesión</button>
+      <mat-card-actions class="botones">
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid" style="margin-right: 1rem;">Iniciar sesión</button>
+        <button mat-raised-button color="primary" (click)="registrar()" [disabled]="loginForm.invalid">Registrarse</button>
       </mat-card-actions>
     </mat-card>
 </form>

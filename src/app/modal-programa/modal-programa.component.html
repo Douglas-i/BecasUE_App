@@ -1,0 +1,40 @@
+<!-- modal-programa.component.html -->
+<div class="modal">
+  <div class="modal-content">
+    <h2>Detalles de la solicitud</h2>
+    <p><strong>Número de Solicitud:</strong> {{ programa.solicitudId }}</p>
+    <p><strong>Resumen:</strong> {{ programa.resumen }}</p>
+    <p><strong>Fecha de Solicitud:</strong> {{ programa.fechaSolicitud }}</p>
+    <!-- Agrega más campos según sea necesario -->
+    <section class="Estudios">
+      <h2>Tus Estudios</h2>
+      <div class="listaProgramas">
+          <!-- programas-ofertados.component.html -->
+          <table style="width: 100%;">
+              <thead>
+              <tr>
+                  <th>Titulo Obtenido</th>
+                  <th>Entidad Emisora</th>
+                  <th>Fecha de Inicio</th>
+                  <th>Fecha de Finalización</th>                                    
+              </tr>
+              </thead>
+              <tbody>
+              <!-- <ng-container *ngIf="!programaSeleccionado"> -->
+                  <!-- Mostrar todos los programas si no hay uno seleccionado -->
+                  <tr *ngFor="let programa of estudiosAcademicos">
+                  <td>{{ programa.tituloObtenido }}</td>
+                  <td>{{ programa.entidadEmisora }}</td>
+                  <td>{{ programa.fechaInicio }}</td>                        
+                  <td>{{ programa.fechaFinalizacion }}</td>
+                  </tr>
+              <!-- </ng-container> -->
+              </tbody>
+          </table>
+      </div>
+    </section>
+    <!--  -->
+    <button (click)="cerrarModal()">Cerrar</button>
+  </div>
+</div>
+

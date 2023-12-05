@@ -9,6 +9,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker'
 import {MatNativeDateModule} from '@angular/material/core'
 import {MatTableModule} from '@angular/material/table'
 import {MatSelectModule} from '@angular/material/select'
+import {MatDialogModule} from '@angular/material/dialog'
 // otros
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -24,7 +25,7 @@ import { MatCardModule } from '@angular/material/card';
     MatNativeDateModule,
     MatTableModule,
     MatSelectModule,
-    
+    MatDialogModule,
     // otros
     ReactiveFormsModule,
     MatCardModule
