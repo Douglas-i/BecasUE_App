@@ -1,0 +1,34 @@
+<!-- universidad.component.html -->
+<app-menu></app-menu>
+<div class="container">     
+  <div class="programas">        
+      <section class="body">
+          <h2>Oferta Anuales</h2>
+          <div class="listaProgramas">
+              <!-- programas-ofertados.component.html -->
+              <table style="width: 100%;">
+                  <thead>
+                  <tr>
+                      <th>Fecha de Inicio</th>
+                      <th>Fecha de Finalizacion</th>
+                      <th>Programa de Titualcion</th>                                        
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- <ng-container *ngIf="!programaSeleccionado"> -->
+                      <!-- Mostrar todos los programas si no hay uno seleccionado -->
+                      <tr *ngFor="let programa of programasOfertadosList">
+                      <td>{{ programa.fechaInicio }}</td>
+                      <td>{{ programa.fechaFinalazacion }}</td>
+                      <td>{{ programa.programaOfertadoId }}</td>                        
+                      </tr>
+                  <!-- </ng-container> -->
+                  </tbody>
+              </table>
+          </div>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="agregarPrograma()">Agregar Oferta</button>
+          </mat-card-actions>
+      </section>
+  </div>    
+</div>

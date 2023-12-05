@@ -24,6 +24,12 @@ import { OfertaAnualComponent } from './oferta-anual/oferta-anual.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { EstudiosAcademicosComponent } from './estudios-academicos/estudios-academicos.component';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { ModalProgramaComponent } from './modal-programa/modal-programa.component';
+import { AgregarUniversidadComponent } from './agregar-universidad/agregar-universidad.component';
+import { AgregarOfertaAnualComponent } from './agregar-oferta-anual/agregar-oferta-anual.component';
+import { ProgramasOfertadosListaComponent } from './programas-ofertados-lista/programas-ofertados-lista.component';
+import { UsuariosListaComponent } from './usuarios-lista/usuarios-lista.component';
+import { DetallesProgramaComponent } from './detalles-programa/detalles-programa.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +49,12 @@ import { MenuAdminComponent } from './menu-admin/menu-admin.component';
     UsuarioComponent,
     EstudiosAcademicosComponent,
     MenuAdminComponent,
+    ModalProgramaComponent,
+    AgregarUniversidadComponent,
+    AgregarOfertaAnualComponent,
+    ProgramasOfertadosListaComponent,
+    UsuariosListaComponent,
+    DetallesProgramaComponent,
   ],
   imports: [
     BrowserModule,

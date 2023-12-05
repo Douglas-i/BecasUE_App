@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
-import { EstudiosAcademicosCDTO } from '../Interface/estudiosAcademicos';
+import { EstudiosAcademicosCDTO, EstudiosAcademicosDTO } from '../Interface/estudiosAcademicos';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +24,8 @@ export class EstudiosService {
     return this.http.post(apiURL, form, httpOptions);
   }
 
-  // public obtenerUniversidad() : Observable<UniversidadDTO[]> {
-  //   const apiURL = environment.apiURL + 'Universidad'; 
-  //   return this.http.get<UniversidadDTO[]>(apiURL);
-  // }
+  public obtenerEstudios() : Observable<EstudiosAcademicosDTO[]> {
+    const apiURL = environment.apiURL + 'EstudiosAcademicos'; 
+    return this.http.get<EstudiosAcademicosDTO[]>(apiURL);
+  }
 }

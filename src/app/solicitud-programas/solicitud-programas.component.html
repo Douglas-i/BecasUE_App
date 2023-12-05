@@ -28,13 +28,6 @@
                 </button>
             </div>
         </form>
-        <!-- <section class="body">
-            <label for="">Resumen</label>
-            <input type="text">
-            <label for="">Fecha</label>
-            <input type="datetime-local">
-            <button style="background-color: rgb(13, 235, 13);" type="button" (click)="guardarCambios()">Guardar</button>
-        </section> -->
     </div>
 
     <!-- Programas Ofertados -->
@@ -51,11 +44,8 @@
                     <tr>
                         <th>ID</th>
                         <th>Inicio</th>
-                        <th>Fin</th>
-                        <th>Monto</th>
-                        <th>Financiamiento</th>
-                        <th>Titulación</th>
-                        <th>Anual</th>
+                        <th>Fin</th>                                                
+                        <th>Titulación</th>                        
                         <th>Universidad</th>
                         <th>Acciones</th>
                     </tr>
@@ -66,14 +56,12 @@
                         <tr *ngFor="let programa of programasOfertados">
                         <td>{{ programa.programaOfertadoId }}</td>
                         <td>{{ programa.fechaInicio }}</td>
-                        <td>{{ programa.fechaFinalazacion }}</td>
-                        <td>{{ programa.montoAprobado }}</td>
-                        <td>{{ programa.financiamiento }}</td>
-                        <td>{{ programa.programasTitualcion }}</td>
-                        <td>{{ programa.ofertaAnual }}</td>
+                        <td>{{ programa.fechaFinalazacion }}</td>                                                
+                        <td>{{ programa.programasTitualcion }}</td>                        
                         <td>{{ programa.universidad }}</td>
                         <td>
                             <button (click)="seleccionarPrograma(programa)">Seleccionar</button>
+                            <button (click)="abrirModal(programa)" style="background-color: blue; margin-left: 2rem;">Ver</button>
                         </td>
                         </tr>
                     </ng-container>

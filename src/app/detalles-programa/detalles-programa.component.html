@@ -1,0 +1,13 @@
+<!-- modal-programa.component.html -->
+<div class="modal">
+    <div class="modal-content">
+      <h2>Detalles del Programa</h2>      
+      <p><strong>Inicio:</strong> {{ programa.fechaInicio }}</p>
+      <p><strong>Fin:</strong> {{ programa.fechaFinalazacion }}</p>
+      <p><strong>Programa:</strong> {{ programa.programasTitualcion }}</p>
+      <p><strong>Universidad:</strong> {{ programa.universidad }}</p>
+      <!-- Agregar más campos según sea necesario -->
+      <button (click)="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+  

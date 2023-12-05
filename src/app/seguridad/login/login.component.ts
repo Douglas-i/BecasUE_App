@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   loginForm: FormGroup;
+  private readonly usuario = 'usuario';
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router, private userService: UserService) {}
   
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -21,10 +23,20 @@ export class LoginComponent {
   }
   
   onSubmit() {
-    if(this.loginForm.value.username == 'admin'){
-      this.router.navigate(['/menu']); 
+    const username = this.loginForm.value.username;
+
+    if (username === 'admin') {
+      // Guardar el usuario en el servicio para que esté disponible en toda la aplicación
+      this.userService.setUsuario(username);
+      this.router.navigate(['/aceptarProgramas']);      
     } else {
-      this.router.navigate(['/menuAdmin']); 
+      // Guardar el usuario en el servicio para que esté disponible en toda la aplicación
+      this.userService.setUsuario(username);
+      this.router.navigate(['/inicio']);
     }
+  }
+
+  registrar() {
+    this.router.navigate(['/persona']);
   }
 }

@@ -3,11 +3,13 @@
     border-radius: 0.8rem;
     border: solid #002F8C;      
 }
-.body{
+/* .body{
     border: solid #002F8C;
-}
+    gap: 2rem;
+} */
 .programas {
-    display: flex;
+    /* display: flex; */
+    gap: 2rem;
 }
 .header {
     background-color: #002F8C;

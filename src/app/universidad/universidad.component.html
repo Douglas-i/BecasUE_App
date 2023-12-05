@@ -2,7 +2,7 @@
 
 <!-- universidad.component.html -->
 
-<form [formGroup]="universidadForm" class="universidad-form" (ngSubmit)="onSubmit()">
+<!-- <form [formGroup]="universidadForm" class="universidad-form" (ngSubmit)="onSubmit()">
     <mat-card>
       <mat-card-header>
         <mat-card-title>Información de la Universidad</mat-card-title>
@@ -38,4 +38,41 @@
       </mat-card-actions>
     </mat-card>
   </form>
-  
+   -->
+<div class="container">     
+    <div class="programas">        
+        <section class="body">
+            <h2>Universidades</h2>
+            <div class="listaProgramas">
+                <!-- programas-ofertados.component.html -->
+                <table style="width: 100%;">
+                    <thead>
+                    <tr>
+                        <th>Nombre de Universidad</th>
+                        <th>Ciudad</th>
+                        <th>Direccion</th>
+                        <th>Pais</th>
+                        <th>Telefono</th>                                            
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- <ng-container *ngIf="!programaSeleccionado"> -->
+                        <!-- Mostrar todos los programas si no hay uno seleccionado -->
+                        <tr *ngFor="let programa of universidadesList">
+                        <td>{{ programa.universidadNombre }}</td>
+                        <td>{{ programa.pais }}</td>
+                        <td>{{ programa.ciudad }}</td>                        
+                        <td>{{ programa.direccion }}</td>
+                        <td>{{ programa.telefono }}</td>
+                        </tr>
+                    <!-- </ng-container> -->
+                    </tbody>
+                </table>
+            </div>
+            <mat-card-actions>
+              <button mat-raised-button color="primary" (click)="agregarUniversidad()">Agregar Unviersidad</button>
+            </mat-card-actions>
+        </section>
+    </div>    
+</div>
+

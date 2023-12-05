@@ -1,0 +1,33 @@
+<!-- universidad.component.html -->
+<app-menu></app-menu>
+<div class="container">     
+  <div class="programas">        
+      <section class="body">
+          <h2>Candidatos</h2>
+          <div class="listaProgramas">
+              <!-- programas-ofertados.component.html -->
+              <table style="width: 100%;">
+                  <thead>
+                  <tr>
+                      <th>Nombre</th>
+                      <th>Apellido</th>
+                      <th>País</th>
+                      <th>Correo</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- <ng-container *ngIf="!programaSeleccionado"> -->
+                      <!-- Mostrar todos los programas si no hay uno seleccionado -->
+                      <tr *ngFor="let programa of usuariosList">
+                      <td>{{ programa.nombrePersona }}</td>
+                      <td>{{ programa.apellidoPersona }}</td>
+                      <td>{{ programa.paisPrecedencia }}</td>
+                      <td>{{ programa.correoElectronico }}</td>                        
+                      </tr>
+                  <!-- </ng-container> -->
+                  </tbody>
+              </table>
+          </div>
+      </section>
+  </div>    
+</div>

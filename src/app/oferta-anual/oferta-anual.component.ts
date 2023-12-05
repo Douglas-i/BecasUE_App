@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class OfertaAnualComponent {
 
   ofertaAnualForm: FormGroup;
+  ofertaAnualList: any[] = [];
 
   constructor(private fb: FormBuilder, private ofertaService: OfertaAnualService, private router: Router) {}
 
@@ -25,24 +26,14 @@ export class OfertaAnualComponent {
       pais: ['', Validators.required],
       estado: ['', Validators.required]
     });
+
+    this.ofertaService.obtenerOferta().subscribe( data => {
+      this.ofertaAnualList = data;    
+      console.log(this.ofertaAnualList);
+    });
   }
   
-  onSubmit() {
-    if (this.ofertaAnualForm.valid) {
-      // Crea instancias de PersonaCDTO y Usuario con los valores del formulario
-      const datosOfertaAnual: OfertaAnualCDTO = {
-        anio: parseInt(this.ofertaAnualForm.value.año),
-        fechaApertura: this.ofertaAnualForm.value.fechaApertura,
-        fechaCierre: this.ofertaAnualForm.value.fechaCierre,
-        numeroUniversidades: this.ofertaAnualForm.value.numeroUniversidades,
-        fechaCreacion: new Date().toISOString(),
-        paisSedePrograma: this.ofertaAnualForm.value.pais,
-        estado: this.ofertaAnualForm.value.estado
-      };
-      console.log(datosOfertaAnual);
-      this.ofertaService.crearOfertaAnual(datosOfertaAnual).subscribe();
-
-      this.router.navigate(['/aceptarProgramas']);
-    }    
+  agregarOferta() {
+    this.router.navigate(['/agregarOferta']);
   }
 }

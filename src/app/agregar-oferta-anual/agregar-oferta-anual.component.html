@@ -1,41 +1,6 @@
 <!-- universidad.component.html -->
 <app-menu></app-menu>
-<div class="container">     
-  <div class="programas">        
-      <section class="body">
-          <h2>Oferta Anuales</h2>
-          <div class="listaProgramas">
-              <!-- programas-ofertados.component.html -->
-              <table style="width: 100%;">
-                  <thead>
-                  <tr>
-                      <th>Fecha de Inicio</th>
-                      <th>Fecha de Finalizacion</th>
-                      <th>Sede</th>                                        
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <!-- <ng-container *ngIf="!programaSeleccionado"> -->
-                      <!-- Mostrar todos los programas si no hay uno seleccionado -->
-                      <tr *ngFor="let programa of ofertaAnualList">
-                      <td>{{ programa.fechaApertura }}</td>
-                      <td>{{ programa.fechaCierre }}</td>
-                      <td>{{ programa.paisSedePrograma }}</td>                        
-                      </tr>
-                  <!-- </ng-container> -->
-                  </tbody>
-              </table>
-          </div>
-          <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="agregarOferta()">Agregar Oferta</button>
-          </mat-card-actions>
-      </section>
-  </div>    
-</div>
-
-
-
-<!-- <form [formGroup]="ofertaAnualForm" class="universidad-form" (ngSubmit)="onSubmit()">
+<form [formGroup]="ofertaAnualForm" class="universidad-form" (ngSubmit)="onSubmit()">
     <mat-card>
       <mat-card-header>
         <mat-card-title>Información Oferta Anual</mat-card-title>
@@ -81,5 +46,4 @@
         <button mat-raised-button color="primary" type="submit" [disabled]="ofertaAnualForm.invalid">Guardar</button>
       </mat-card-actions>
     </mat-card>
-  </form> -->
-  
+  </form>
