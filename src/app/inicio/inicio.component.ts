@@ -29,13 +29,24 @@ export class InicioComponent {
 
       this.solicitudesProgramas.forEach(solicitud => {
 
+        const paises = [
+          'Doctorado en Ciencias de la Computación', 'MBA', 'Maestría en Ingeniería Eléctrica',
+          'Doctorado en Historia', 'MSc en Inteligencia Artificial', 'Maestría en Economía',
+          'Doctorado en Biología Molecular', 'Maestría en Estudios Latinoamericanos', 'Maestría en Derecho',
+          'Doctorado en Psicología', 'Juris Doctor (JD)', 'Maestría en Administración Pública',
+          'Doctorado en Física Cuántica', 'MBA en Negocios Internacionales', 'Maestría en Ingeniería Civil',
+          'Doctorado en Medicina', 'Master of Arts in Linguistics', 'Maestría en Ciencias Ambientales',
+          'Doctorado en Ingeniería Mecánica', 'Master of Science in Robotics', 'Maestría en Gestión de Tecnologías de la Información'
+      ];
+        const indiceAleatorio = Math.floor(Math.random() * paises.length);
+
         if(solicitud.personaId == 1) {
           const solicitudV2: SolicitudProgramaDTOv2 = {
             // Asigna los valores correspondientes
             solicitudId: solicitud.solicitudId,
             fechaSolicitud: solicitud.fechaSolicitud,
             personaId: "Douglas",
-            programaOfertadoId: solicitud.programaOfertadoId,
+            programaOfertadoId: paises[indiceAleatorio].toString(),
             resumen: solicitud.resumen,
             estado: solicitud.estado
           };
@@ -47,7 +58,7 @@ export class InicioComponent {
             solicitudId: solicitud.solicitudId,
             fechaSolicitud: solicitud.fechaSolicitud,
             personaId: "Rafael",
-            programaOfertadoId: solicitud.programaOfertadoId,
+            programaOfertadoId: paises[indiceAleatorio].toString(),
             resumen: solicitud.resumen,
             estado: solicitud.estado
           };
