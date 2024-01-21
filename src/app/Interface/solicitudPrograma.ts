@@ -21,7 +21,7 @@ export interface SolicitudProgramaDTOv2 {
     fechaSolicitud: string,
     estado: string,
     personaId: string,
-    programaOfertadoId: number
+    programaOfertadoId: string
 }
 
 export interface SolicitudesAceptadas {

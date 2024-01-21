@@ -7,6 +7,7 @@ import { ProgramasOfertadosDTO } from '../Interface/programasOfertados';
 import { SolicitudProgramasService } from '../services/solicitud-programas.service';
 import { DetallesProgramaComponent } from '../detalles-programa/detalles-programa.component';
 import { MatDialog } from '@angular/material/dialog';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-solicitud-programas',
@@ -59,7 +60,16 @@ export class SolicitudProgramasComponent implements OnInit{
     this.solicitudProgramaService.crerPrograma(datosSolicitud).subscribe(data => {
       console.log(data);
     });
-    this.router.navigate(['/inicio'])    
+    Swal.fire({
+      icon: 'success',
+      title: 'Guardado exitosamente',
+      showConfirmButton: false,
+      timer: 1500
+    }).then(() => {
+      // Redirige a la página de dashboard después de la alerta
+      this.router.navigate(['/inicio']);
+    });
+    // this.router.navigate(['/inicio'])    
   }
 
   //Modal

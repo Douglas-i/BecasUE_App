@@ -17,6 +17,7 @@ import { AgregarUniversidadComponent } from './agregar-universidad/agregar-unive
 import { AgregarOfertaAnualComponent } from './agregar-oferta-anual/agregar-oferta-anual.component';
 import { ProgramasOfertadosListaComponent } from './programas-ofertados-lista/programas-ofertados-lista.component';
 import { UsuariosListaComponent } from './usuarios-lista/usuarios-lista.component';
+import { ExperienciaLaboralComponent } from './experiencia-laboral/experiencia-laboral.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -35,7 +36,8 @@ const routes: Routes = [
   {path: 'agregarUniversidad', component: AgregarUniversidadComponent},
   {path: 'agregarOferta', component: AgregarOfertaAnualComponent},
   {path: 'programasList', component: ProgramasOfertadosListaComponent},
-  {path: 'candidatos', component: UsuariosListaComponent}
+  {path: 'candidatos', component: UsuariosListaComponent},
+  {path: 'experienciaLaboral', component: ExperienciaLaboralComponent}
 ];
 
 @NgModule({

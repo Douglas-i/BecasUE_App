@@ -5,6 +5,7 @@ import { ProgramasOfertadoCDTO, ProgramasOfertadosDTO } from '../Interface/progr
 import { UniversidadService } from '../services/universidad.service';
 import { OfertaAnualService } from '../services/oferta-anual.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-programas-ofertados',
@@ -60,6 +61,15 @@ export class ProgramasOfertadosComponent {
       this.programaOferadoService.crearProgramaOfertado(datosProgramasOfertado).subscribe();     
     // }    
 
-    this.router.navigate(['/menu'])
+    Swal.fire({
+      icon: 'success',
+      title: 'Guardado exitosamente',
+      showConfirmButton: false,
+      timer: 1500
+    }).then(() => {
+      // Redirige a la página de dashboard después de la alerta
+      this.router.navigate(['/menu'])
+    });
+    // this.router.navigate(['/menu'])
   }
 }

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UniversidadService } from '../services/universidad.service';
 import { Router } from '@angular/router';
 import { UniversidadCDTO } from '../Interface/Universidad';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-agregar-universidad',
@@ -38,7 +39,15 @@ export class AgregarUniversidadComponent {
       
       this.universidadService.crearUniversidad(datosUniversidad).subscribe();     
 
-      this.router.navigate(['/universidad']);
+      Swal.fire({
+        icon: 'success',
+        title: 'Guardado exitosamente',
+        showConfirmButton: false,
+        timer: 1500
+      }).then(() => {
+        // Redirige a la página de dashboard después de la alerta
+        this.router.navigate(['/universidad']);
+      });      
     }    
   }
 }
